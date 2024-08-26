@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethics Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Childcare and Housekeeping Ethics Assistant</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('scenarios') }}">Scenarios</a>
+            <a href="{{ url_for('guidance') }}">Guidance</a>
+            <a href="{{ url_for('community') }}">Community</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </nav>
+    </header>
+    <main class="home">
+        <h2>Welcome to the Ethics Assistant</h2>
+        <p>Navigate ethical dilemmas with interactive scenarios and community support.</p>
+        <button id="learn-more-btn">Learn More</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ethics Assistant</p>
+    </footer>
+</body>
+</html>

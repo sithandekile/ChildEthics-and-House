@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Scenarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Ethical Scenarios</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('community') }}">Community</a>
+            <a href="{{ url_for('guidance') }}">Guidance</a>
+        </nav>
+    </header>
+    <main>
+        <div class="scenario-container">
+            <h2>Common Ethical Dilemmas</h2>
+            <!-- Loop through scenarios dynamically fetched from the backend -->
+            {% for scenario in scenarios %}
+            <div class="scenario">
+                <h3>{{ scenario.title }}</h3>
+                <p>{{ scenario.description }}</p>
+                <button class="details-button" onclick="viewScenarioDetails('{{ scenario.id }}')">View Details</button>
+                <button class="respond-button" onclick="respondToScenario('{{ scenario.id }}')">Respond</button>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ethics Assistant</p>
+    </footer>
+
+    <!-- Modal for displaying scenario details -->
+    <div id="scenario-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <form id="response-form">
+                <textarea id="user-response" placeholder="Type your response here..."></textarea>
+                <button type="button" onclick="submitResponse()">Submit Response</button>
+            </form>
+        </div>
+    </div>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

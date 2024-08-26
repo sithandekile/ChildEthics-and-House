@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Community</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('scenarios') }}">Scenarios</a>
+            <a href="{{ url_for('guidance') }}">Guidance</a>
+            <a href="{{ url_for('community') }}">Community</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Community Discussion</h2>
+        
+        <section id="discussion-form">
+            <h3>Share Your Thoughts</h3>
+            <form action="#" method="POST" id="post-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Post</button>
+            </form>
+        </section>
+        
+        <section id="discussion-board">
+            <h3>Discussion Board</h3>
+            <div class="post">
+                <h4>JudthMoe:</h4>
+                <p>How do you handle a situation where a family requests that you perform tasks outside of your job description?</p>
+            </div>
+            <div class="post">
+                <h4>HailDazzy:</h4>
+                <p>It's important to communicate your boundaries clearly. You should explain politely but firmly what tasks fall within your job responsibilities and what doesn't.</p>
+            </div>
+            <!-- More posts will go here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ethics Assistant</p>
+    </footer>
+</body>
+</html>
